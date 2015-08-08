@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//alert("Prueba " + window.localStorage.getItem("BANQUETE"));
+			$("#tag30").show();
+			$("#price30").show();
+			$("#txtQuest").text("en tu banquete de "  +window.localStorage.getItem("BANQUETE") + "?");
+			$("#tag20").attr("src","img/" + window.localStorage.getItem("BANQUETE") + "20.png");
+			$("#tag30").attr("src","img/" + window.localStorage.getItem("BANQUETE") + "30.png");
+			$("#btnRegresa").click(function() {
+				window.history.back();
+			});
+			if (window.localStorage.getItem("BANQUETE") == "Pechuguitas") {
+				$("#tag30").hide();
+				$("#tag20").css("left","5px");
+				$("#price30").hide();
+				$("#price20").css("left","-10px");
+			}
+			$("#price20").click(function() {
+				window.localStorage.setItem("CANT","20");
+				window.localStorage.setItem("PRECIO","90");
+				if (window.localStorage.getItem("BANQUETE") == "Pechuguitas") {
+					window.localStorage.setItem("SALSA","Solo empanizada.");
+					$(location).attr('href','aderesos20.html');
+				}else {
+					$(location).attr('href','salsa.html');
+				}
+			});
+			$("#price30").click(function() {
+				window.localStorage.setItem("CANT","30");
+				window.localStorage.setItem("PRECIO","119");
+				$(location).attr('href','salsa.html');
+			});
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetop"></div>
+	<img src="img/btnRegresa.png" id="btnRegresa" style="position:relative;top:-130px;left:0px;">
+	<center style="position:relative;top:-30px;"><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;width:50px;">&iquest;Cu&aacute;ntas unidades deseas</b></center>
+	<center style="position:relative;top:-30px;"><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;width:50px;" id="txtQuest">en tu banquete de ?</b></center>
+	<center>
+	<div id="cajitas" style="position:relative;top:-20px;height:80px">
+		<img src="img/Pechuguitas20.png" style="position:relative;left:40px" id="tag20"/>&nbsp;&nbsp;&nbsp;<img src="img/Pechuguitas30.png" style="position:relative;left:-40px; width=155px" id="tag30"/>
+	</div>
+	</center>
+	<center>
+	<div id="precios" style="position:relative;top:-30px">
+		<img src="img/tag20.png" style="position:relative;left:10px;top:-10px;" id="price20"/>&nbsp;&nbsp;&nbsp;<img src="img/tag30.png"  style="position:relative;left:-40px;top:-17px" id="price30"/>
+	</div>
+	</center>
+</div>

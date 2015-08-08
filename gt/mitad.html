@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript">
+		var imagenes = new Array();
+		var textos = new Array();	
+		var i = 0;
+		$(document).ready(function() {
+			i=0;
+			textos[0] = "Buffalo / Barbacoa";
+			textos[1] = "Oriental / Barbacoa";
+			textos[2] = "Oriental / Buffalo";
+			imagenes[0] = "bufabarb.png";
+			imagenes[1] = "oriebarb.png";
+			imagenes[2] = "oriebufa.png";
+			$("#banquete").attr("src","img/"+window.localStorage.getItem("BANQUETE") + window.localStorage.getItem("CANT") + imagenes[i]);
+			$("#texto").text("Salsa " + textos[i]);
+			$("#btnSeleccionar").click(function() {
+				window.localStorage.setItem("MITAD",textos[i]);
+				if (window.localStorage.getItem("CANT")=="20") {
+					$(location).attr('href','aderesos20.html');	
+				}else {
+					$(location).attr('href','aderesos30-1.html');	
+				}
+			});
+			$("#btnder").click(function() {
+				if (i==2) {
+					i=-1;
+				}
+				i++;
+				$("#banquete").attr("src","img/"+window.localStorage.getItem("BANQUETE") + window.localStorage.getItem("CANT") + imagenes[i]);
+				if ((window.localStorage.getItem("BANQUETE")=="Alitas") && (i==2)) {
+					$("#texto").text("Salsa Buffalo / Oriental");
+				}else {
+					$("#texto").text("Salsa  " + textos[i]);	
+				}
+				
+			});
+			$("#btnizq").click(function() {
+				if (i==0) {
+					i=3;
+				}
+				i--;
+				$("#banquete").attr("src","img/"+window.localStorage.getItem("BANQUETE") + window.localStorage.getItem("CANT") + imagenes[i]);
+				if ((window.localStorage.getItem("BANQUETE")=="Alitas") && (i==2)) {
+					$("#texto").text("Salsa Buffalo / Oriental");
+				}else {
+					$("#texto").text("Salsa  " + textos[i]);	
+				}
+			});
+			$("#btnRegresa").click(function() {
+				window.history.back();
+			});
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetop"></div>
+	<img src="img/btnRegresa.png" id="btnRegresa" style="position:relative;top:-130px;left:0px;">
+	<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;width:50px;top:0px">Seleccciona la conbinaci&oacute;n de</b></center>
+	<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;width:50px;top:0px">salsa que deseas</b></center>
+	<div id="seleccion" style="position:relative;width:100%;top:10px">
+		<center>
+		<img src="img/btnizq.png"id="btnizq" style="position:relative;left:5px;top:0px;width:80px;width:60px;"/>
+		<img src="img/camperitos.png" id="banquete" style="position:relative;z-index:3;left:2px;top:-5px;left:-1px;width:150px">	
+		<img src="img/btnder.png" id="btnder" style="position:relative;top:0px;left:-5px;width:80px;width:60px;"/>
+		</center>
+	</div>
+	<center><b id="texto" style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;top:20px;">Banquete de <script>textos[i];</script> </b></center>
+	<div data-theme="f" data-role="footer" data-position="fixed">
+		<center><img src="img/btnSeleccionar.png" id="btnSeleccionar">
+	</div>
+</div>
+</body>
+</html>

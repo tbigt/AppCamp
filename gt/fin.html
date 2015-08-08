@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		//$.mobile.loading( 'hide' );
+			//navigator.splashscreen.hide();
+			$("#btnInicio").click(function() {
+					window.localStorage.setItem("TOTAL","0");
+					window.localStorage.setItem("PEDIDO","");
+				$(location).attr('href','menu.html');
+			})
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetop"></div>
+	<div class="content-box">
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:15px;">Gracias por tu preferencia.</b></center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:15px;">En unos momentos</b></center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:15px;">te estaremos contactando</b></center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:15px;">por tel&eacute;fono para confirmar</b> </center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:15px;">tu pedido.</b></center>
+			<br/>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:10px;top:-10px;">Una copia de tu orden fue enviada como comprobante</b> </center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:10px;top:-10px;">a tu correo electronico.</b> </center>
+			<br/>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:7px;top:-10px;">* Env&iacute;o a domicilio sujeto a disponibilidad y cobertura.</b> </center>
+			<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:7px;top:-10px;">* Aplican restriciones.</b>	 </center>
+	</div>
+	<div data-theme="f" data-role="footer" data-position="fixed">
+		<center><img src="img/btnInicio.png" id="btnInicio"></center>
+	</div>
+</div>

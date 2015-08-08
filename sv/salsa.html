@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript">
+		var opciones = new Array();
+		var i=0;
+		$(document).ready(function() {
+			opciones[0]="Solo empanizadas";
+			opciones[1]="Bañadas en salsa";
+			opciones[2]="Bañadas en dos salsa";
+			$("#txtQuest").html('<b>&#xBF;Como deseas tus '+ window.localStorage.getItem("BANQUETE") +'?</b>');
+			$("#op1").click(function() {
+				i=0;
+				window.localStorage.setItem("SALSA",opciones[i]);
+				if (window.localStorage.getItem("CANT")=="20") {
+					$(location).attr('href','aderesos20.html');	
+				}else {
+					$(location).attr('href','aderesos30-1.html');	
+				}
+			});
+			$("#op2").click(function() {
+				i=1;
+				window.localStorage.setItem("SALSA",opciones[i]);
+				$(location).attr('href','banadas.html');
+			});
+			$("#op3").click(function() {
+				i=2;
+				window.localStorage.setItem("SALSA",opciones[i]);
+				$(location).attr('href','mitad.html');
+			});
+			$("#btnRegresa").click(function() {
+				window.history.back();
+			});
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetop"></div>
+	<img src="img/btnRegresa.png" id="btnRegresa" style="position:relative;top:-130px;left:0px;">
+	<center><div id="txtQuest" style="position:relative;top:-30px;color:#FFFFFF;text-shadow:2px 2px #000000">&iquest;Como deseas tus Alitas?</div></center>
+	<center><img src="img/btnop1.png" id="op1"/></center>
+	<center><img src="img/btnop2.png" id="op2" style="position:relative;top:-30px;"/></center>
+	<center><img src="img/btnop3.png" id="op3" style="position:relative;top:-60px;"/></center>
+</div>

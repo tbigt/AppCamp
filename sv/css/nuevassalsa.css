@@ -1,0 +1,68 @@
+#page1 {
+	background-image:url('../img/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div .imagetop {
+	background-image:url('../img/image-top.png');
+	background-repeat:no-repeat;
+	position:relative;
+	top:0px;
+	height:150px;
+	width:146px;
+	margin:0px auto;
+}
+
+div .imagetoppedido {
+	background-image:url('../img/pedido-top.png');
+	background-repeat:no-repeat;
+	position:relative;
+	top:0px;
+	height:300px;
+	width:253px;
+	margin:0px auto;
+}
+
+div .content-box {
+	background:#ba5214;
+	border-bottom-style:solid;
+	border-bottom-color:#ffffff;
+	border-top-style:solid;
+	border-top-color:#ffffff;
+	position :relative;
+	top:10px;
+	width:100%;
+	height:200px;
+}
+#msgbox {
+	position:relative;
+	width:200px;
+	height:175px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background:#ff0000;
+}
+div .content-box img {
+	position:relative;
+	width:298px;
+	height:200px;
+	margin:0px auto;
+}
+#btnInicio {
+	position:relative;
+	top:5px;
+}
+
+img .optbtn {
+	height:52px;
+	width:162px;
+	
+}
+
+img #btnRegresa {
+	position:relative;
+	top:-150px;
+	left:0px;
+}

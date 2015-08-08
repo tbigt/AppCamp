@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#btnPedido").click(function() {
+				$(location).attr('href','banquete.html');
+			});
+			$("#btnConf").click(function() {
+				window.localStorage.setItem("EDIT","si");
+				$(location).attr('href','login.html');
+			});
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetoppedido"></div>
+	<center><img src="img/btnPedido.png"id="btnPedido"/></center>
+	<center><img src="img/btnConfigurar.png"id="btnConf" style="position:relative;left:7px;"/></center>
+</div>

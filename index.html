@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/nuevassalsa.css" type="text/css"/>
+	<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/cordova.js"></script>  
+	<script type="text/javascript">
+	/*
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+	    	//mensaje de load
+	    	$.mobile.loading( 'show', {
+				text: 'Cargando Datos',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	    }
+	*/
+		//document.addEventListener("deviceready", onDeviceReady, false);
+
+	// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+		function onDeviceReady() {
+		// tell enyo to listen for backbutton event
+		// navigator.splashscreen.show();
+		}
+		$(document).ready(function() {
+		//$.mobile.loading( 'hide' );
+			//navigator.splashscreen.hide();
+			window.localStorage.setItem("EDIT","");
+			$("#btnInicio").click(function() {
+				window.localStorage.setItem("TOTAL","0");
+				window.localStorage.setItem("PEDIDO","");
+				window.localStorage.setItem("CANTPEDIDO","0");
+				$(location).attr('href','login.html');
+			})
+		});
+	</script>
+</head>
+<body>
+<div data-role="page" id="page1">
+	<div class="imagetop"></div>
+	<div class="content-box">
+			<div style="position:relative;top:25px">
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">Gracias por descargar</b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;"> &quot;Banquetes Campero&quot;</b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">Para comenzar a hacer</b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">tus pedidos debes </b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">de ingresar tu direccion  de</b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">correo electr&oacute;nico, tu tel&eacute;fono</b></center>
+				<center><b style="color:#FFFFFF;text-shadow:2px 2px #000000;position:relative;font-size:17px;">y pa&iacute;s de residencia</b></center>
+			</div>
+	</div>
+	<div data-theme="f" data-role="footer" data-position="fixed">
+		<center><img src="img/btnInicio.png" id="btnInicio"></center>
+	</div>
+</div>
